@@ -69,13 +69,20 @@ vec3 RayTracer::RayPixel(Ray &ray) {
     vec3 unit_direction;
     HitInfo info;
 
-    if (setup->getBackground()) {
-        vec3 ray2 = normalize(ray.getDirection());
-        color = 0.5f * vec3(ray2.x+1, ray2.y+1, ray2.z+1);
+    // If the ray hits an object
+    if (scene->hit(ray, 0.0, numeric_limits<float>::infinity(), info)) {
+        color = info.mat_ptr->Kd;
+    // If the ray does not hit an object
     } else {
-        color = vec3(0,0,0);
+        // Set color to background
+        if (setup->getBackground()){
+            vec3 ray2 = normalize(ray.getDirection());
+            float t = 0.5f*(ray2.y + 1);
+            color = (1 - t)*vec3(1, 1, 1) + t*vec3(0.5, 0.7, 1);
+        } else {
+            color = vec3(0,0,0);
+        }
     }
-
     return color;
 }
 
