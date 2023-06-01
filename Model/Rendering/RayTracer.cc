@@ -71,7 +71,9 @@ vec3 RayTracer::RayPixel(Ray &ray) {
 
     // If the ray hits an object
     if (scene->hit(ray, 0.0, numeric_limits<float>::infinity(), info)) {
-        color = info.mat_ptr->Kd;
+        //color = info.mat_ptr->Kd;
+        shared_ptr<ShadingStrategy>shadingStrategy = setup->getShadingStrategy();
+        color = shadingStrategy->shading(scene, info, setup->getCamera()->getLookFrom());
     // If the ray does not hit an object
     } else {
         // Set color to background
