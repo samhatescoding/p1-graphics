@@ -2,6 +2,9 @@
 
 #include "Object.hh"
 #include "Sphere.hh"
+#include "Box.hh"
+#include "Triangle.hh"
+#include "Cylinder.hh"
 #include "Plane.hh"
 
 #include "Mesh.hh"
