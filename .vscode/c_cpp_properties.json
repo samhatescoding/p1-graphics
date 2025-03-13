@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/DataInOut",
+                "${workspaceFolder}/View",
+                "${workspaceFolder}/Model",
+                "/usr/include/x86_64-linux-gnu/qt5",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5/QtGui",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "defines": []
+        }
+    ],
+    "version": 4
+}

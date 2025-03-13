@@ -1,4 +1,12 @@
-QT       += core gui
+QT += core gui
+QT += widgets
+CONFIG += link_pkgconfig
+PKGCONFIG += Qt5Widgets Qt5Gui Qt5Core
+QMAKE_CXXFLAGS += -fPIC
+
+INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5
+INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5/QtCore
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,6 +24,7 @@ SOURCES += \
     Controller.cpp \
     DataInOut/AttributeMapping.cpp \
     DataInOut/Output.cpp \
+    DataInOut/Serializable.cpp \
     DataInOut/VisualMapping.cpp \
     Main.cpp \
     Model/Builder.cpp \
